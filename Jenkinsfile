@@ -1,17 +1,12 @@
 pipeline {
-   agent {
-    node {
-        label 'my-defined-label'
-        customWorkspace 'C://windows//system32//config//systemprofile//AppData//Local//Jenkins//.jenkins//workspace//PlayWright//'
-    }
-}
+   agent { docker { image 'mcr.microsoft.com/playwright:v1.43.0-jammy' } }
    stages {
       stage('e2e-tests') {
-        agent {
-                label 'windows'
-            }
          steps {
-            bat 'npx playwright test api'
+            dir('C:\\windows\\system32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PlayWright'){
+            sh 'npm ci'
+            sh 'npx playwright test api'
+            }
          }
       }
    }
