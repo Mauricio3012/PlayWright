@@ -1,13 +1,17 @@
 pipeline {
-   agent { docker { image 'mcr.microsoft.com/playwright:v1.43.0-jammy' } }
-   stages {
-      stage('use-dir') {
-         steps {
-            dir('C:\\windows\\system32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\PlayWright'){
-            sh 'npm ci'
-            sh 'npx playwright test api'
-            }
-         }
+  agent any
+  stages {
+    stage('full path') {
+      steps {
+        sh 'cat my-project/file.txt'
       }
-   }
+    }
+    stage('use dir') {
+      steps {
+        dir('my-project') {
+          sh 'cat file.txt'
+        }
+      }
+    }
+  }
 }
