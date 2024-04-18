@@ -1,0 +1,17 @@
+{
+  "name": "live_zero_playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "postman": "npx playwright test api"
+  },
+  "author": "Mauricio Oliveira",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.43.0",
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.4"
+  }
+}
