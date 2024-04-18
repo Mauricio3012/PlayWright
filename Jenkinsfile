@@ -6,6 +6,9 @@ pipeline {
   }
   stages {
     stage('install playwright') {
+          environment {
+                  HOME="."
+                }
       steps {
         sh '''
           npm i -D @playwright/test
@@ -14,11 +17,17 @@ pipeline {
       }
     }
     stage('help') {
+          environment {
+                  HOME="."
+                }
       steps {
         sh 'npx playwright test --help'
       }
     }
     stage('test') {
+          environment {
+                  HOME="."
+                }
       steps {
         sh '''
           npx playwright test --list
