@@ -5,6 +5,7 @@ pipeline {
                 } }
    environment {
         PATH = "C:\\WINDOWS\\SYSTEM32"
+   }
    stages {
       stage('e2e-tests') {
          steps {
