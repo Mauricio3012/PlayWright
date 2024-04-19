@@ -1,8 +1,8 @@
 pipeline {
-   agent { docker { 
-                image 'mcr.microsoft.com/powershell'
-                reuseNode true
-                } }
+   agent {   docker {
+      label 'linux'
+      image 'python'
+    }}
    stages {
       stage('e2e-tests') {
          steps {
