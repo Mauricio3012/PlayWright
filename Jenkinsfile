@@ -2,11 +2,6 @@ pipeline {
    agent { docker { 
                image 'mcr.microsoft.com/windows/insider:10.0'
                 } }
-
-   tools {
-        maven 'MAVEN'
-        jdk 'JAVA_JDK'
-    }
    stages {
     stage('install playwright') {
       steps {
