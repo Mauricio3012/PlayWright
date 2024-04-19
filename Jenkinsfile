@@ -6,7 +6,6 @@ pipeline {
    tools {
         maven 'MAVEN'
         jdk 'JAVA_JDK'
-        docker 'DOCKER'
     }
    stages {
     stage('install playwright') {
