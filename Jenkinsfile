@@ -1,7 +1,5 @@
 pipeline {
-   agent {   docker {
-      image 'python'
-    }}
+agent { docker { image 'mcr.microsoft.com/playwright:v1.43.0-jammy' } }
    stages {
       stage('e2e-tests') {
          steps {
