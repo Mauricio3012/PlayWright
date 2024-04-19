@@ -3,6 +3,8 @@ pipeline {
                 image 'mcr.microsoft.com/playwright:v1.43.0-jammy'
                 reuseNode true
                 } }
+   environment {
+        PATH = "C:\\WINDOWS\\SYSTEM32"
    stages {
       stage('e2e-tests') {
          steps {
