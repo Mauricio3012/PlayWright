@@ -1,11 +1,32 @@
 pipeline {
-agent { docker { image 'mcr.microsoft.com/playwright:v1.43.0-jammy' } }
-   stages {
-      stage('e2e-tests') {
+  agent {
+    docker { image 'node:latest' }
+  }
+  stages {
+    stage('Install') {
+      steps { bat 'npm install' }
+    }
+
+    stage('Test') {
+      parallel {
+        stage('Static code analysis') {
+            steps { bat 'npm run-script lint' }
+        }
+        stage('Unit tests') {
+            steps { bat 'npm run-script test' }
+        }
+      }
+    }
+
+    stage('Build') {
+      steps { bat 'npm run-script build' }
+    }
+
+        stage('e2e-tests') {
          steps {
             sh 'npm ci'
             sh 'npx playwright test'
          }
-      }
-   }
+    }
+  }
 }
