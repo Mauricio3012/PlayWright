@@ -1,11 +1,8 @@
 pipeline {
    agent { docker { 
-                image 'mcr.microsoft.com/playwright:v1.43.0-jammy'
+                image 'mcr.microsoft.com/powershell'
                 reuseNode true
                 } }
-   environment {
-        PATH = "C:\\WINDOWS\\SYSTEM32"
-   }
    stages {
       stage('e2e-tests') {
          steps {
