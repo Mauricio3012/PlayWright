@@ -3,7 +3,7 @@ pipeline {
    stages {
       stage('e2e-tests') {
          steps {
-            sh 'npm ci'
+            sh 'node --version'
             sh 'npx playwright test api'
          }
       }
