@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npx playwright test",
     "postman": "npx playwright test api",
-    "login": "npx playwright test login"
+    "login": "npx playwright test login",
+    "fiore": "npx playwright test fiore"
   },
   "author": "Mauricio Oliveira",
   "license": "ISC",

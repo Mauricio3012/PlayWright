@@ -27,7 +27,8 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
     launchOptions: {
-      slowMo: 300
+      slowMo: 1_000,
+      
     },
     video: 'on',
     screenshot: 'only-on-failure',
